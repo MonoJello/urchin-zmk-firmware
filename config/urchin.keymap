@@ -16,7 +16,7 @@
 #define EXT 2
 #define FNC 3
 #define SYM2 4
-#define ACCENT 5
+//#define ACCENT 5
 #define SETTINGS 6
 // -----------------
 
@@ -55,12 +55,14 @@
 
 	combos {
 		compatible = "zmk,combos";
+
 		// both right thumb keys
-		combo_accent {
-			timeout-ms = <200>;
-			key-positions = <32 33>;
-			bindings = <&mo ACCENT>;
-		};
+		//combo_accent {
+		//	timeout-ms = <200>;
+		//	key-positions = <32 33>;
+		//	bindings = <&mo ACCENT>;
+		//};
+
 		// internal-left & external-right thumb keys
 		combo_sym2 {
 			timeout-ms = <200>;
@@ -89,10 +91,15 @@
 		default_layer {
 			label = "Base";
 			bindings = <
-			&kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P 
-			&kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp IT_OGRV
-			&kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp IT_UGRV
-							&mo EXT &qt LSHIFT SPACE           &kp SPACE &sl SYM
+			//&kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P 
+			//&kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp IT_OGRV
+			//&kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp SINGLE_QUOTE
+
+			&kp SINGLE_QUOTE &kp COMMA &kp DOT &kp P &kp Y           &kp F &kp G  &kp C     &kp R   &kp L 
+			&kp A &kp O &kp E &kp U &kp I           &kp D &kp H  &kp T     &kp N &kp S
+			&kp SEMICOLON &kp Q &kp J &kp K &kp X           &kp B &kp M  &kp W &kp V &kp Z
+
+			&mo EXT &qt LSHIFT SPACE           &kp SPACE &sl SYM
 			>;
 		};
 
@@ -141,15 +148,15 @@
 		};
 
 		// Used to type regional accents.
-		accent_layer {
-			label = "Accent";
-			bindings = <
-			&none &none &none &kp IT_CEGR &none                         &none &none &none &none &none 
-			&kp IT_AGRV &kp IT_IGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU &none &none &none &none &none
-			&none &none &none &kp IT_UGRV &none                         &none &none &none &none &none
-									&none &none                         &none &none 
-			>;
-		};
+		// accent_layer {
+		//	label = "Accent";
+		//	bindings = <
+		//	&none &none &none &kp IT_CEGR &none                         &none &none &none &none &none 
+		//	&kp IT_AGRV &kp IT_IGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU &none &none &none &none &none
+		//	&none &none &none &kp IT_UGRV &none                         &none &none &none &none &none
+		//							&none &none                         &none &none 
+		//	>;
+		//};
 
 		// Used to change the keyboard's settings.
 		settings_layer {
