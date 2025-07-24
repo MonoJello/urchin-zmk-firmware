@@ -15,7 +15,7 @@
 #define SYM 1
 #define EXT 2
 #define FNC 3
-#define MOUSE 4
+#define MOUSEE 4
 #define SETTINGS 5
 // -----------------
 
@@ -80,7 +80,7 @@
 		sym_layer {
 			label = "Sym.";
 			bindings = <
-			&kp ESC		&kp TAB 		&to MOUSE		&to FNC 	&to EXT			&kp LC(BSPC)	&kp N7	&kp N8 	&kp N9 	&kp BSPC
+			&kp ESC		&kp TAB 		&to MOUSEE		&to FNC 	&to EXT			&kp LC(BSPC)	&kp N7	&kp N8 	&kp N9 	&kp BSPC
 			&kp GRAVE	&kp LEFT_BRACKET 	&kp RIGHT_BRACKET 	&kp BACKSLASH 	&kp SLASH		&none 		&kp N4 	&kp N5 	&kp N6 	&kp ENTER
 			&kp EQUAL	&kp MINUS 		&none 			&none 		&none 			&kp N0 		&kp N1	&kp N2 	&kp N3  &kp DEL								
 			&to BASE 	&qt LSHIFT SPACE									&kp SPACE 	&to SYM
@@ -91,7 +91,7 @@
 		ext_layer {
 			label = "Mods";
 			bindings = <
-			&kp ESC		&none 		&to MOUSE	&to FNC		&to EXT		&kp PG_UP	&none		&none		&none		&none
+			&kp ESC		&none 		&to MOUSEE	&to FNC		&to EXT		&kp PG_UP	&none		&none		&none		&none
 			&sk LALT 	&sk LGUI  	&sk LSHIFT  	&sk LCTRL  	&kp RALT 	&kp PG_DN 	&kp HOME  	&kp END		&kp CAPS	&none
 			&kp LC(Z)	&kp LC(X) 	&kp LC(C) 	&kp LC(V)   	&none          	&none		&none 		&none		&none		&none
 			&none 		&qt LSHIFT SPACE	    					&kp SPACE 	&to SYM 
@@ -104,20 +104,19 @@
 			bindings = <
 			&kp F1		&kp F2 		&kp F3 		&kp F4 		&kp F5			&kp F6 	&kp F7	&kp F8	&kp F9	&kp F10 
 			&sk LALT 	&sk LGUI 	&sk LSHIFT 	&sk LCTRL 	&kp RALT     		&kp F11 &kp F12	&none	&none	&none
-			&none 		&none 		&to MOUSE	&to FNC  	&to EXT			&none 	&none	&none	&none	&none 	  
+			&none 		&none 		&to MOUSEE	&to FNC  	&to EXT			&none 	&none	&none	&none	&none 	  
 			&none 		&none									&none	&to SYM 
 			>;
 		};
 
 		mouse_layer {
-			label = "Mouse";
-			bindings = <
-
-			&none &msc SCRL_LEFT	&mmv MOVE_UP	&msc SCRL_RIGHT	&msc SCRL_UP		&mkp MCLK	&mkp LCLK	&mkp RCLK	&none		&none
-			&none &mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT &msc SCRL_UP		&kp LEFT	&kp DOWN	&kp UP		&kp RIGHT	&none
-			&none &none 		&to MOUSE	&to FNC  	&to EXT			&none		&none		&none		&none		&none
-			&kp LCTRL &kp LSHIFT								&none 		&to SYM
-			>;
+				label = "Mouse";
+				bindings = <
+				&none &msc SCRL_LEFT	&mmv MOVE_UP	&msc SCRL_RIGHT	&msc SCRL_UP		&mkp MCLK	&mkp LCLK	&mkp RCLK	&none		&none
+				&none &mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT &msc SCRL_DOWN		&kp LEFT	&kp DOWN	&kp UP		&kp RIGHT	&none
+				&none &none 		&to MOUSEE	&to FNC  	&to EXT			&none		&none		&none		&none		&none
+				&kp LCTRL &kp LSHIFT								&none 		&to SYM
+				>;
 		};
 
 		// Used to change the keyboard's settings.
